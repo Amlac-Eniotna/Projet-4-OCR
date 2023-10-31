@@ -120,4 +120,32 @@
     height: 100%
     width: 100%
     z-index: 10
-    opacity: 0.5
+    display: flex
+    justify-content: center
+    align-items: center
+    animation: background_loading 2.2s forwards
+    &__img
+        position: absolute
+        top: 50%
+        animation: loading 2s forwards
+
+@keyframes loading
+    0%
+        opacity: 0
+    25%
+        opacity: 0.60
+    50%
+        opacity: 0.30
+    75%
+        opacity: 0.60
+        top: 50%
+    100%
+        opacity: 0
+        top: 10%
+
+@keyframes background_loading
+    80%
+        opacity: 1
+    100%
+        opacity: 0
+        
