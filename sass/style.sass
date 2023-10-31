@@ -59,10 +59,6 @@ body
         z-index: 5
     &__svg
         stroke: #000000
-
-input[type="checkbox"]:checked + .restaurant__card--like__svg
-    fill: url(#like-gradient)
-    stroke: url(#like-gradient)
-
-@import index
-@import menu
+    &__input:checked + &__svg
+        fill: url(#like-gradient)
+        stroke: url(#like-gradient)

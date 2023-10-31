@@ -68,8 +68,7 @@ body {
 .restaurant__card--like__svg {
   stroke: #000000;
 }
-
-input[type=checkbox]:checked + .restaurant__card--like__svg {
+.restaurant__card--like__input:checked + .restaurant__card--like__svg {
   fill: url(#like-gradient);
   stroke: url(#like-gradient);
 }
@@ -227,4 +226,4 @@ input[type=checkbox]:checked + .restaurant__card--like__svg {
   font-weight: 300;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=index.css.map */
