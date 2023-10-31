@@ -1,3 +1,23 @@
+@property --btn-color-top {
+  syntax: "<color>";
+  initial-value: #FF79DA;
+  inherits: false;
+}
+@property --btn-color-bot {
+  syntax: "<color>";
+  initial-value: #9356DC;
+  inherits: false;
+}
+@property --btn-color-top {
+  syntax: "<color>";
+  initial-value: #FF79DA;
+  inherits: false;
+}
+@property --btn-color-bot {
+  syntax: "<color>";
+  initial-value: #9356DC;
+  inherits: false;
+}
 * {
   margin: 0;
   object-fit: cover;
@@ -15,15 +35,16 @@ i {
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: #F6F6F6;
+  background-color: #ffffff;
 }
 
 .header__navbar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 14px 0 13px;
+  height: 63px;
   background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
 }
@@ -56,21 +77,38 @@ body {
 }
 
 .restaurant__card--like {
+  height: 21px;
+  width: 22px;
   position: relative;
 }
 .restaurant__card--like__input {
   position: absolute;
+  opacity: 0;
+  z-index: 6;
   width: 100%;
   height: 100%;
+}
+.restaurant__card--like__svg-false {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.restaurant__card--like__svg-true {
+  position: absolute;
   opacity: 0;
-  z-index: 5;
+  transition: opacity 0.2s;
 }
-.restaurant__card--like__svg {
-  stroke: #000000;
+.restaurant__card--like__input:hover ~ .restaurant__card--like__svg-false {
+  opacity: 0;
 }
-.restaurant__card--like__input:checked + .restaurant__card--like__svg {
-  fill: url(#like-gradient);
-  stroke: url(#like-gradient);
+.restaurant__card--like__input:hover ~ .restaurant__card--like__svg-true {
+  opacity: 1;
+}
+.restaurant__card--like__input:checked ~ .restaurant__card--like__svg-false {
+  opacity: 0;
+}
+.restaurant__card--like__input:checked ~ .restaurant__card--like__svg-true {
+  opacity: 1;
 }
 
 .header__location_bar {
@@ -87,6 +125,7 @@ body {
 }
 
 .reservation {
+  background-color: #F6F6F6;
   text-align: center;
   padding: 39px 34px 57px;
 }
@@ -105,17 +144,22 @@ body {
 }
 .reservation__button {
   border-radius: 25px;
-  background: var(--Button-Gradient, linear-gradient(0deg, #9356DC -11.44%, #FF79DA 123.93%));
+  background: linear-gradient(0deg, var(--btn-color-bot) -11.44%, var(--btn-color-top) 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: white;
   border: none;
   font-size: 16px;
   font-weight: 500;
+  transition: --btn-color-bot 0.2s, --btn-color-top 0.2s, box-shadow 0.2s;
   padding: 13px 18.75px;
+}
+.reservation__button:hover {
+  --btn-color-bot: #A36FE1;
+  --btn-color-top: #FF8CDF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 .feature {
-  background-color: white;
   padding: 48px 20px 68px 32px;
 }
 .feature__title {
@@ -169,6 +213,7 @@ body {
 }
 
 .restaurant {
+  background-color: #F6F6F6;
   padding: 54px 17px 66px;
 }
 .restaurant__title {
@@ -224,6 +269,15 @@ body {
 .restaurant__card--location {
   font-size: 17px;
   font-weight: 300;
+}
+
+.loader {
+  position: fixed;
+  background: white;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  opacity: 0.5;
 }
 
 /*# sourceMappingURL=index.css.map */

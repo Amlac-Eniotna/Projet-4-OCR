@@ -15,6 +15,7 @@
         font-weight: 500
 
 .reservation
+    background-color: #F6F6F6
     text-align: center
     padding: 39px 34px 57px
     &__title_section
@@ -27,9 +28,10 @@
     &__button
         @include btn
         padding: 13px 18.75px
+    &__button:hover
+        @include btn-hover
 
 .feature
-    background-color: white
     padding: 48px 20px 68px 32px
     &__title
         margin-bottom: 25px
@@ -71,6 +73,7 @@
         gap: 24.92px
 
 .restaurant
+    background-color: #F6F6F6
     padding: 54px 17px 66px
     &__title
         margin-bottom: 25px
@@ -110,3 +113,11 @@
         &--location
             font-size: 17px
             font-weight: 300
+
+.loader
+    position: fixed
+    background: white
+    height: 100%
+    width: 100%
+    z-index: 10
+    opacity: 0.5
