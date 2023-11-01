@@ -1,12 +1,23 @@
-.header__navbar--go-back {
-  width: 100%;
-  padding: 0 17px;
-  justify-content: flex-start;
+@property --btn-color-top {
+  syntax: "<color>";
+  initial-value: #FF79DA;
+  inherits: false;
 }
-.header__navbar--img {
-  position: absolute;
+@property --btn-color-bot {
+  syntax: "<color>";
+  initial-value: #9356DC;
+  inherits: false;
 }
-
+@property --btn-color-top {
+  syntax: "<color>";
+  initial-value: #FF79DA;
+  inherits: false;
+}
+@property --btn-color-bot {
+  syntax: "<color>";
+  initial-value: #9356DC;
+  inherits: false;
+}
 * {
   margin: 0;
   object-fit: cover;
@@ -32,7 +43,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 100%;
   height: 63px;
   background-color: white;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
@@ -65,29 +75,205 @@ body {
   font-weight: 500;
 }
 
-.restaurant__card--like {
+.restaurant__like {
+  height: 21px;
+  width: 22px;
   position: relative;
-  z-index: 4;
 }
-.restaurant__card--like__input {
+.restaurant__like--input {
   position: absolute;
+  opacity: 0;
+  z-index: 6;
+  width: 100%;
+  height: 100%;
+}
+.restaurant__like--svg-false {
+  position: absolute;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+.restaurant__like--svg-true {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.restaurant__like--input:hover ~ .restaurant__like--svg-false {
+  opacity: 0;
+}
+.restaurant__like--input:hover ~ .restaurant__like--svg-true {
+  opacity: 1;
+}
+.restaurant__like--input:checked ~ .restaurant__like--svg-false {
+  opacity: 0;
+}
+.restaurant__like--input:checked ~ .restaurant__like--svg-true {
+  opacity: 1;
+}
+
+@media (min-width: 1020px) {
+  i {
+    width: auto;
+  }
+  .header__navbar {
+    height: 96px;
+  }
+  .footer {
+    height: 114px;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    padding: 30px 25px;
+  }
+  .footer__title {
+    width: 138px;
+  }
+  .footer__menu {
+    flex-direction: row;
+  }
+  .footer__menu--link {
+    width: 130px;
+  }
+  .footer__menu--link-icon {
+    width: 190px;
+  }
+}
+.header__navbar--go-back {
+  width: 100%;
+  padding: 0 17px;
+  justify-content: flex-start;
+}
+.header__navbar--img {
+  position: absolute;
+}
+
+.picture__img {
+  height: 275px;
+  width: 100%;
+}
+
+.menu {
+  background-color: #F6F6F6;
+  border-radius: 30px 30px 0 0;
+  position: relative;
+  top: -30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.menu__title {
+  padding: 32px 17px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+}
+.menu__title--text {
+  font-family: Shrikhand;
+  font-size: 28px;
+  font-weight: 400;
+}
+.menu__form {
+  padding: 0 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.menu__form--title {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  width: 40px;
+  border-bottom: solid 3px #99E2D0;
+  overflow: visible;
+  padding-bottom: 3px;
+}
+.menu__part {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.menu__card {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.menu__card--info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 15px;
+}
+.menu__card--input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
   width: 100%;
   height: 100%;
   opacity: 0;
-  z-index: 6;
 }
-.restaurant__card--like__svg {
-  z-index: 5;
-  stroke: #000000;
-  fill: #ffffff;
+.menu__card--title {
+  font-size: 18px;
+  font-weight: 500;
 }
-.restaurant__card--like__input:hover + .restaurant__card--like__svg {
-  fill: url(#like-gradient);
-  stroke: url(#like-gradient);
+.menu__card--bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-.restaurant__card--like__input:checked + .restaurant__card--like__svg {
-  fill: url(#like-gradient);
-  stroke: url(#like-gradient);
+.menu__card--description {
+  font-size: 15px;
+  font-weight: 300;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.menu__card--price {
+  font-size: 15px;
+  font-weight: 700;
+}
+.menu__card--true-visual {
+  background-color: #99E2D0;
+  color: #99E2D0;
+  width: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.5s;
+}
+.menu__card--true-visual--check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+}
+.menu__card--input:checked ~ .menu__card--true-visual {
+  width: 60px;
+}
+.menu__button {
+  margin: auto;
+  border-radius: 25px;
+  background: linear-gradient(0deg, var(--btn-color-bot) -11.44%, var(--btn-color-top) 123.93%);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: --btn-color-bot 0.2s, --btn-color-top 0.2s, box-shadow 0.2s;
+  padding: 16px 48px;
+  width: 186px;
+  margin-bottom: 10px;
+}
+.menu__button:hover {
+  --btn-color-bot: #A36FE1;
+  --btn-color-top: #FF8CDF;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
 }
 
 /*# sourceMappingURL=menu.css.map */

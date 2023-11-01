@@ -1,4 +1,5 @@
 @import mixin
+@import style
 
 .header
     &__navbar
@@ -9,6 +10,104 @@
         &--img
             position: absolute
 
+.picture
+    &__img
+        height: 275px
+        width: 100%
 
-    
-@import style
+.menu
+    background-color: #F6F6F6
+    border-radius: 30px 30px 0 0
+    position: relative
+    top: -30px
+    display: flex
+    flex-direction: column
+    gap: 40px
+    &__title
+        padding: 32px 17px 0
+        display: flex
+        flex-direction: row
+        align-items: center
+        gap: 24px
+        &--text
+            font-family: Shrikhand
+            font-size: 28px
+            font-weight: 400
+    &__form
+        padding: 0 13px
+        display: flex
+        flex-direction: column
+        gap: 40px
+        &--title
+            font-size: 16px
+            font-weight: 300
+            text-transform: uppercase
+            width: 40px
+            border-bottom: solid 3px #99E2D0
+            overflow: visible
+            padding-bottom: 3px
+    &__part
+        @include group_menu
+    &__card
+        background-color: white
+        display: flex
+        flex-direction: row
+        border-radius: 15px
+        position: relative
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.10)
+        overflow: hidden
+        &--info
+            display: flex
+            flex-direction: column
+            width: 100%
+            margin: 15px
+        &--input
+            position: absolute
+            top: 0px
+            left: 0px
+            width: 100%
+            height: 100%
+            opacity: 0
+        &--title
+            font-size: 18px
+            font-weight: 500
+        &--bottom
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+        &--description
+            font-size: 15px
+            font-weight: 300
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+        &--price
+            font-size: 15px
+            font-weight: 700
+        &--true-visual
+            background-color: #99E2D0
+            color: #99E2D0
+            width: 0px
+            display: flex
+            justify-content: center
+            align-items: center
+            overflow: hidden
+            transition: width 0.5s
+            &--check
+                display: flex
+                justify-content: center
+                align-items: center
+                background-color: white
+                height: 20px
+                width: 20px
+                border-radius: 10px
+        &--input:checked ~ &--true-visual
+            width: 60px
+    &__button
+        margin: auto
+        @include btn
+        padding: 16px 48px
+        width: 186px
+        margin-bottom: 10px
+    &__button:hover
+        @include btn-hover
