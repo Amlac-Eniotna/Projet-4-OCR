@@ -110,9 +110,29 @@ body {
   opacity: 1;
 }
 
-@media (min-width: 768.02px) {
+@media (min-width: 1020px) {
+  i {
+    width: auto;
+  }
   .header__navbar {
     height: 96px;
+  }
+  .footer {
+    height: 114px;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+  .footer__title {
+    width: 138px;
+  }
+  .footer__menu {
+    flex-direction: row;
+  }
+  .footer__menu--link {
+    width: 130px;
+  }
+  .footer__menu--link-icon {
+    width: 190px;
   }
 }
 .header__location_bar {
@@ -131,7 +151,7 @@ body {
 .reservation {
   background-color: #F6F6F6;
   text-align: center;
-  padding: 39px 34px 57px;
+  padding: 39px 34px 72px;
 }
 .reservation__title_section {
   font-family: Roboto;
@@ -151,11 +171,10 @@ body {
   background: linear-gradient(0deg, var(--btn-color-bot) -11.44%, var(--btn-color-top) 123.93%);
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   color: white;
-  border: none;
   font-size: 16px;
   font-weight: 500;
   transition: --btn-color-bot 0.2s, --btn-color-top 0.2s, box-shadow 0.2s;
-  padding: 13px 18.75px;
+  padding: 15px 18.75px;
 }
 .reservation__button:hover {
   --btn-color-bot: #A36FE1;
@@ -225,18 +244,18 @@ body {
   padding: 54px 17px 66px;
 }
 .restaurant__title {
-  margin-bottom: 7px;
+  margin-bottom: 28px;
   font-family: Roboto;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
 }
-.restaurant__grid {
+.restaurant__center {
   margin: auto;
   max-width: 490px;
 }
-.restaurant__grid--center {
+.restaurant__center--grid {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -245,6 +264,21 @@ body {
   background-color: white;
   border-radius: 15px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.restaurant__card--new {
+  font-weight: 500;
+  text-align: center;
+  padding: 7px;
+  color: #008766;
+  background-color: #99E2D0;
+  border-radius: 2px;
+  margin: 12px;
+  width: 80px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  align-self: flex-end;
 }
 .restaurant__card--img {
   height: 231px;
@@ -333,18 +367,40 @@ body {
     opacity: 0;
   }
 }
-@media (min-width: 768.02px) {
+@media (min-width: 765px) {
+  .reservation {
+    padding: 30px 30px 45px;
+  }
   .reservation__title_section {
     font-size: 40px;
   }
   .feature__grid {
     flex-direction: row;
+    gap: 36.51px;
+    padding: 0 12px;
   }
   .feature__center {
     max-width: 1080px;
   }
   .feature__card {
     width: 100%;
+  }
+  .restaurant {
+    padding: 30px 50px;
+  }
+  .restaurant__center {
+    max-width: 1080px;
+  }
+  .restaurant__center--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    transition: gap 1s;
+  }
+}
+@media (min-width: 1435px) {
+  .restaurant__center--grid {
+    gap: 50px 100px;
   }
 }
 

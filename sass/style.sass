@@ -77,7 +77,23 @@ body
     &__input:checked ~ &__svg-true
         opacity: 1
 
-@media (min-width: 768.02px)
+@media (min-width: 1020px)
+    i
+        width: auto 
+
     .header
         &__navbar
             height: 96px
+    
+    .footer
+        height: 114px
+        flex-direction: row-reverse
+        align-items: flex-end
+        &__title
+            width: 138px
+        &__menu
+            flex-direction: row
+            &--link
+                width: 130px
+            &--link-icon
+                width: 190px
