@@ -160,11 +160,12 @@ body {
   gap: 40px;
 }
 .menu__title {
-  padding: 32px 17px 0;
+  padding: 32px 41px 0 17px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  gap: 5px;
 }
 .menu__title--text {
   font-family: Shrikhand;
@@ -205,6 +206,7 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 15px;
+  overflow: hidden;
 }
 .menu__card--input {
   position: absolute;
@@ -217,6 +219,9 @@ body {
 .menu__card--title {
   font-size: 18px;
   font-weight: 500;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .menu__card--bottom {
   display: flex;
@@ -274,6 +279,69 @@ body {
   --btn-color-bot: #A36FE1;
   --btn-color-top: #FF8CDF;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.background-center {
+  background-color: #F6F6F6;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: -1;
+}
+
+article {
+  position: absolute;
+  left: 100vw;
+}
+
+article:nth-child(1) {
+  animation: apparition 1s forwards 0s;
+}
+
+article:nth-child(2) {
+  animation: apparition 1s forwards 0.5s;
+}
+
+article:nth-child(3) {
+  animation: apparition 1s forwards 1s;
+}
+
+article:nth-child(4) {
+  animation: apparition 1s forwards 1.5s;
+}
+
+article:nth-child(5) {
+  animation: apparition 1s forwards 2s;
+}
+
+article:nth-child(6) {
+  animation: apparition 1s forwards 2.5s;
+}
+
+article:nth-child(7) {
+  animation: apparition 1s forwards 3s;
+}
+
+article:nth-child(8) {
+  animation: apparition 1s forwards 3.5s;
+}
+
+article:nth-child(9) {
+  animation: apparition 1s forwards 4s;
+}
+
+article:nth-child(10) {
+  animation: apparition 1s forwards 4.5s;
+}
+
+@keyframes apparition {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: 0;
+  }
 }
 
 /*# sourceMappingURL=menu.css.map */
