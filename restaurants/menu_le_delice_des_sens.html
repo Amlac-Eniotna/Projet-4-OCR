@@ -27,9 +27,9 @@
         </nav>
     </header>
     <main>
-        <section class="picture">
+        <div class="picture">
             <img src="../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="photo d'un plat gastronomique" class="picture__img">
-        </section>
+        </div>
         <section class="menu">
             <div class="menu__title">
                 <h1 class="menu__title--text">Le délice des sens</h1>
@@ -39,11 +39,11 @@
                     <img src="../assets/images/svg/heart-fill.svg" alt="liké" class="restaurant__like--svg-true">
                 </div>
             </div>
-            <form action="" method="get" class="menu__form">
+            <form method="get" class="menu__form">
                 <div class="menu__part">
                     <h2 class="menu__form--title">Entrées</h2>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n1">
+                        <input type="checkbox" id="tartare_de_thon" name="appetizer" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Tartare de thon</h3>
                             <div class="menu__card--bottom">
@@ -55,8 +55,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n2">
+                        <input type="checkbox" id="bouche_de_homard_croustillant" name="appetizer" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Bouchée de homard croustillant</h3>
                             <div class="menu__card--bottom">
@@ -68,8 +68,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n3">
+                        <input type="checkbox" id="veloute_de_cepes" name="appetizer" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Velouté de cèpes</h3>
                             <div class="menu__card--bottom">
@@ -84,8 +84,8 @@
                 </div>
                 <div class="menu__part">
                     <h2 class="menu__form--title">Plats</h2>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n4">
+                        <input type="checkbox" id="poulet_roti_aux_herbes_de_provence" name="dish" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Poulet rôti aux herbes de Provence</h3>
                             <div class="menu__card--bottom">
@@ -97,8 +97,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n5">
+                        <input type="checkbox" id="langouste_rotie" name="dish" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Langouste rôtie</h3>
                             <div class="menu__card--bottom">
@@ -110,8 +110,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n6">
+                        <input type="checkbox" id="cote_de_boeuf_angus" name="dish" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Côte de bœuf Angus</h3>
                             <div class="menu__card--bottom">
@@ -126,8 +126,8 @@
                 </div>
                 <div class="menu__part">
                     <h2 class="menu__form--title">Dessert</h2>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n7">
+                        <input type="checkbox" id="farandole_de_desserts" name="dessert" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Farandole de desserts</h3>
                             <div class="menu__card--bottom">
@@ -139,8 +139,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n8">
+                        <input type="checkbox" id="creme_brulee" name="dessert" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Crème brulée</h3>
                             <div class="menu__card--bottom">
@@ -152,8 +152,8 @@
                             <i class="fa-solid fa-check menu__card--true-visual--check"></i>
                         </div>
                     </article>
-                    <article class="menu__card">
-                        <input type="checkbox" id="fricassee_d_escargot" name="appetizer" class="menu__card--input">
+                    <article class="menu__card n9">
+                        <input type="checkbox" id="tiramisu" name="dessert" class="menu__card--input">
                         <div class="menu__card--info">
                             <h3 class="menu__card--title">Tiramisu</h3>
                             <div class="menu__card--bottom">
@@ -166,7 +166,7 @@
                         </div>
                     </article>
                 </div>
-                <input type="submit" class="menu__button" href="#" value="Commander">
+                <input type="submit" class="menu__button" value="Commander">
             </form>
         </section>
         <div class="background-center"></div>
