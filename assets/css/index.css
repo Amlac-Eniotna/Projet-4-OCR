@@ -87,12 +87,6 @@ body {
   opacity: 0;
   transition: opacity 0.2s;
 }
-.restaurant__like--input:hover ~ .restaurant__like--svg-false {
-  opacity: 0;
-}
-.restaurant__like--input:hover ~ .restaurant__like--svg-true {
-  opacity: 1;
-}
 .restaurant__like--input:checked ~ .restaurant__like--svg-false {
   opacity: 0;
 }
