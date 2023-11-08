@@ -29,6 +29,8 @@ body {
 }
 
 .header__navbar {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -100,6 +102,7 @@ body {
   }
   .header__navbar {
     height: 96px;
+    box-shadow: none;
   }
   .footer {
     height: 114px;
@@ -302,31 +305,31 @@ article {
   animation: apparition 1s forwards 0s;
 }
 .menu__card.n2 {
-  animation: apparition 1s forwards 0.3s;
+  animation: apparition 1s forwards 0.1s;
 }
 .menu__card.n3 {
-  animation: apparition 1s forwards 0.6s;
+  animation: apparition 1s forwards 0.2s;
 }
 .menu__card.n4 {
-  animation: apparition 1s forwards 0.9s;
+  animation: apparition 1s forwards 0.3s;
 }
 .menu__card.n5 {
-  animation: apparition 1s forwards 1.2s;
+  animation: apparition 1s forwards 0.4s;
 }
 .menu__card.n6 {
-  animation: apparition 1s forwards 1.5s;
+  animation: apparition 1s forwards 0.5s;
 }
 .menu__card.n7 {
-  animation: apparition 1s forwards 1.8s;
+  animation: apparition 1s forwards 0.6s;
 }
 .menu__card.n8 {
-  animation: apparition 1s forwards 2.1s;
+  animation: apparition 1s forwards 0.7s;
 }
 .menu__card.n9 {
-  animation: apparition 1s forwards 2.4s;
+  animation: apparition 1s forwards 0.8s;
 }
 .menu__card.n10 {
-  animation: apparition 1s forwards 2.7s;
+  animation: apparition 1s forwards 0.9s;
 }
 
 @keyframes apparition {
