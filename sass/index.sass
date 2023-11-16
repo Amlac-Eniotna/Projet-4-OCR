@@ -1,34 +1,27 @@
-@import mixin
+@import var
 @import style
 
 .header
     &__location_bar
         height: 50px
-        background-color: #EAEAEA
-        display: flex
-        flex-direction: row
-        justify-content: center
-        align-items: center
-        gap: 17px
-        color: #353535
-        font-size: 16px
-        font-weight: 500
+        @include color($color: #353535, $background-color: $color-location)
+        @include flex($direction: row, $justify: center, $align: center, $gap: 17px)
+        @include font($size: 16px, $weight: 500)
 
 .reservation
-    background-color: #F6F6F6
+    background-color: $color2
     text-align: center
     padding: 39px 34px 72px
     &__title_section
-        @include section_title_index
+        @include font(24px, 700)
         margin-bottom: 18px
     &__paragraphe
-        font-size: 18px
-        font-weight: 300
+        @include font($size: 18px, $weight: 300)
         margin-bottom: 27px
     &__button
         @include btn(218px)
     &__button:hover
-        @include btn-hover
+        @extend %btn-hover
 
 .feature
     padding: 48px 20px 68px 32px
@@ -36,80 +29,63 @@
         margin: auto
         max-width: 323.51px
     &__grid
-        display: flex
-        flex-direction: column
-        gap: 24.92px
+        @include flex($direction: column, $gap: 24.92px)
     &__title
+        @include font(24px, 700)
         margin-bottom: 25px
-        @include section_title_index
     &__card
-        // width: 100%
-        background-color: #F6F6F6
-        display: flex
-        flex-direction: row
-        align-items: center
-        gap: 27px
-        position: relative
+        background-color: $color2
+        @include flex($direction: row, $align: center, $gap: 27px)
         height: 72.379px
+        position: relative
         border-radius: 20px
         padding-left: 34px
         box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15)
         &--number
-            font-size: 14.182px
-            color: white
-            background-color: #9356DC
-            display: flex
-            justify-content: center
-            align-items: center
-            width: 24px
-            height: 24px
-            position: absolute
-            left: -12px
+            @include font($size: 14.182px, $weight: 500)
+            @include color($color: white, $background-color: $color3)
+            @include flex($justify: center, $align: center)
+            @include position($position: absolute, $l: -12px)
+            @include size($width: 24px, $height: 24px)
             border-radius: 50%
         &--emote
             color: #7E7E7E
-            font-size: 20px
+            @include font($size: 20px, $weight: 900, $family: "Font Awesome 6 Free")
         .fa-store
-            color: #9356DC
+            color: $color3
         &--title
-            font-size: 16px
-            font-weight: 500
+            @include font($size: 16px, $weight: 500)
 
 .restaurant
-    background-color: #F6F6F6
+    background-color: $color2
     padding: 54px 17px 66px
     &__title
+        @include font(24px, 700)
         margin-bottom: 28px
-        @include section_title_index
     &__center
         margin: auto
         max-width: 490px
         &--grid
-            display: flex
-            flex-direction: column
-            gap: 18px
+            @include flex($direction: column, $gap: 18px)
     &__card
-        background-color: white
+        @include flex($direction: column)
+        background-color: $color1
         border-radius: 15px
         width: 100%
-        display: flex
-        flex-direction: column
         &--new
-            font-weight: 500
+            @include font($size: 14px, $weight: 500)
+            @include color($color: $color6, $background-color: $color5)
             text-align: center
             padding: 7px
-            color: #008766
-            background-color: #99E2D0
             border-radius: 2px
             margin: 12px
-            width: 80px
             box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15)
-            position: absolute
+            position: absolute 
+            width: 80px
             align-self: flex-end
         &--img
-            height: 231px
-            width: 100%
-            border-radius: 20px 20px 0 0
+            @include size($width: 100%, $height: 231px)
+            border-radius: 15px 15px 0 0
             &_menu_1
                 object-position: bottom
             &_menu_2
@@ -119,37 +95,26 @@
             &_menu_4
                 object-position: bottom
         &--bottom
-            display: flex
-            flex-direction: row
-            align-items: center
+            @include flex($direction: row, $align: center)
             padding-right: 25px
             &__link
                 width: 100%
         &--text
-            display: flex
-            flex-direction: column
-            gap: 5px
+            @include flex($direction: column, $gap: 5px)
             padding: 16px 0 16px 13px
         &--title
-            font-size: 18px
-            font-weight: 700
+            @include font($size: 18px, $weight: 700)
         &--location
-            font-size: 17px
-            font-weight: 300
+            @include font($size: 17px, $weight: 300)
 
 .loader
-    position: fixed
-    background: white
-    height: 100%
-    width: 100%
-    z-index: 10
-    display: flex
-    justify-content: center
-    align-items: center
+    @include position($position: fixed, $z: 10)
+    @include size($width: 100%, $height: 100%)
+    @include flex($justify: center, $align: center)
+    background-color: $color1
     animation: background_loading 2.2s forwards
     &__img
-        position: absolute
-        top: 50%
+        @include position($position: absolute, $top: 50%)
         animation: loading 2s forwards
 
 @keyframes loading
@@ -164,7 +129,6 @@
         top: 50%
     100%
         opacity: 1
-        opacity: 0
         top: 10%
 
 @keyframes background_loading
@@ -181,13 +145,12 @@
     .reservation
         padding: 30px 30px 45px
         &__title_section
-            font-size: 40px
+            @include font($size: 40px, $weight: 700)
     
     .feature
         padding: 50px
         &__grid
-            flex-direction: row
-            gap: 36.51px
+            @include flex($direction: row, $gap: 36.51px)
             padding: 0 12px 
         &__center
             max-width: 1080px

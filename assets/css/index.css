@@ -1,3 +1,17 @@
+.reservation__button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.reservation__button:hover .overlay-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.reservation__button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.reservation__button:hover .overlay-btn {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 * {
   margin: 0;
   object-fit: cover;
@@ -14,8 +28,7 @@ i {
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: #ffffff;
+  background-color: #FFFFFF;
 }
 
 .header__navbar {
@@ -23,51 +36,73 @@ body {
   z-index: 1;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: normal;
   height: 63px;
-  background-color: white;
+  background-color: #FFFFFF;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.header__navbar--img {
+  width: 162px;
 }
 
 .footer {
-  background-color: #353535;
   color: white;
+  background-color: #353535;
   font-size: 16px;
   font-weight: 400;
-  padding: 22px 25px;
+  font-family: "roboto";
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
   gap: 16px;
+  padding: 22px 25px;
 }
 .footer__title {
-  font-family: "Shrikhand";
   font-size: 18px;
   font-weight: 400;
+  font-family: "Shrikhand";
 }
 .footer__menu {
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
   gap: 7px;
 }
 .footer__menu--link-icon {
   display: flex;
   flex-direction: row;
+  justify-content: normal;
+  align-items: normal;
   gap: 11px;
+  font-size: 16px;
   font-weight: 500;
+  font-family: "roboto";
 }
 
 .restaurant__like {
-  height: 21px;
   width: 22px;
+  height: 21px;
+  max-width: none;
   position: relative;
 }
 .restaurant__like--input {
   position: absolute;
-  opacity: 0;
+  width: auto;
+  height: auto;
   z-index: 6;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  max-width: none;
   width: 100%;
   height: 100%;
+  max-width: none;
+  opacity: 0;
 }
 .restaurant__like--svg-false {
   position: absolute;
@@ -94,10 +129,16 @@ body {
     height: 96px;
     box-shadow: none;
   }
+  .header__navbar--img {
+    width: 200px;
+  }
   .footer {
     height: 114px;
+    display: flex;
     flex-direction: row-reverse;
+    justify-content: normal;
     align-items: flex-end;
+    gap: normal;
     padding: 30px 25px;
   }
   .footer__title {
@@ -115,15 +156,16 @@ body {
 }
 .header__location_bar {
   height: 50px;
+  color: #353535;
   background-color: #EAEAEA;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 17px;
-  color: #353535;
   font-size: 16px;
   font-weight: 500;
+  font-family: "roboto";
 }
 
 .reservation {
@@ -132,16 +174,15 @@ body {
   padding: 39px 34px 72px;
 }
 .reservation__title_section {
-  font-family: Roboto;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  font-family: "roboto";
   margin-bottom: 18px;
 }
 .reservation__paragraphe {
   font-size: 18px;
   font-weight: 300;
+  font-family: "roboto";
   margin-bottom: 27px;
 }
 .reservation__button {
@@ -154,6 +195,7 @@ body {
   border: none;
   font-size: 16px;
   font-weight: 500;
+  font-family: "roboto";
   transition: box-shadow 0.2s;
   overflow: hidden;
   padding: 0;
@@ -168,13 +210,6 @@ body {
   transition: background-color 0.2s;
   background-color: rgba(255, 255, 255, 0);
 }
-.reservation__button:hover {
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-}
-.reservation__button:hover .overlay-btn {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
 .feature {
   padding: 48px 20px 68px 32px;
 }
@@ -185,44 +220,59 @@ body {
 .feature__grid {
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
   gap: 24.92px;
 }
 .feature__title {
-  margin-bottom: 25px;
-  font-family: Roboto;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  font-family: "roboto";
+  margin-bottom: 25px;
 }
 .feature__card {
   background-color: #F6F6F6;
   display: flex;
   flex-direction: row;
+  justify-content: normal;
   align-items: center;
   gap: 27px;
-  position: relative;
   height: 72.379px;
+  position: relative;
   border-radius: 20px;
   padding-left: 34px;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 .feature__card--number {
   font-size: 14.182px;
+  font-weight: 500;
+  font-family: "roboto";
   color: white;
   background-color: #9356DC;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: normal;
+  position: absolute;
+  width: auto;
+  height: auto;
+  z-index: auto;
+  top: auto;
+  bottom: auto;
+  left: -12px;
+  right: auto;
+  max-width: none;
   width: 24px;
   height: 24px;
-  position: absolute;
-  left: -12px;
+  max-width: none;
   border-radius: 50%;
 }
 .feature__card--emote {
   color: #7E7E7E;
   font-size: 20px;
+  font-weight: 900;
+  font-family: "Font Awesome 6 Free";
 }
 .feature__card .fa-store {
   color: #9356DC;
@@ -230,6 +280,7 @@ body {
 .feature__card--title {
   font-size: 16px;
   font-weight: 500;
+  font-family: "roboto";
 }
 
 .restaurant {
@@ -237,12 +288,10 @@ body {
   padding: 54px 17px 66px;
 }
 .restaurant__title {
-  margin-bottom: 28px;
-  font-family: Roboto;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
+  font-family: "roboto";
+  margin-bottom: 28px;
 }
 .restaurant__center {
   margin: auto;
@@ -251,32 +300,40 @@ body {
 .restaurant__center--grid {
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
   gap: 18px;
 }
 .restaurant__card {
-  background-color: white;
-  border-radius: 15px;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
+  gap: normal;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  width: 100%;
 }
 .restaurant__card--new {
+  font-size: 14px;
   font-weight: 500;
-  text-align: center;
-  padding: 7px;
+  font-family: "roboto";
   color: #008766;
   background-color: #99E2D0;
+  text-align: center;
+  padding: 7px;
   border-radius: 2px;
   margin: 12px;
-  width: 80px;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   position: absolute;
+  width: 80px;
   align-self: flex-end;
 }
 .restaurant__card--img {
-  height: 231px;
   width: 100%;
-  border-radius: 20px 20px 0 0;
+  height: 231px;
+  max-width: none;
+  border-radius: 15px 15px 0 0;
 }
 .restaurant__card--img_menu_1 {
   object-position: bottom;
@@ -293,7 +350,9 @@ body {
 .restaurant__card--bottom {
   display: flex;
   flex-direction: row;
+  justify-content: normal;
   align-items: center;
+  gap: normal;
   padding-right: 25px;
 }
 .restaurant__card--bottom__link {
@@ -302,32 +361,53 @@ body {
 .restaurant__card--text {
   display: flex;
   flex-direction: column;
+  justify-content: normal;
+  align-items: normal;
   gap: 5px;
   padding: 16px 0 16px 13px;
 }
 .restaurant__card--title {
   font-size: 18px;
   font-weight: 700;
+  font-family: "roboto";
 }
 .restaurant__card--location {
   font-size: 17px;
   font-weight: 300;
+  font-family: "roboto";
 }
 
 .loader {
   position: fixed;
-  background: white;
-  height: 100%;
-  width: 100%;
+  width: auto;
+  height: auto;
   z-index: 10;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  max-width: none;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: normal;
+  background-color: #FFFFFF;
   animation: background_loading 2.2s forwards;
 }
 .loader__img {
   position: absolute;
+  width: auto;
+  height: auto;
+  z-index: auto;
   top: 50%;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  max-width: none;
   animation: loading 2s forwards;
 }
 
@@ -347,7 +427,6 @@ body {
   }
   100% {
     opacity: 1;
-    opacity: 0;
     top: 10%;
   }
 }
@@ -370,12 +449,17 @@ body {
   }
   .reservation__title_section {
     font-size: 40px;
+    font-weight: 700;
+    font-family: "roboto";
   }
   .feature {
     padding: 50px;
   }
   .feature__grid {
+    display: flex;
     flex-direction: row;
+    justify-content: normal;
+    align-items: normal;
     gap: 36.51px;
     padding: 0 12px;
   }
