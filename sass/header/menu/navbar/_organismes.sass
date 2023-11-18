@@ -1,0 +1,10 @@
+@mixin navbar($direction, $justify, $align)
+    &__navbar
+        @include flex($direction: $direction, $justify: $justify, $align: $align)
+        @include position($position: relative, $z: 1)
+        height: 63px
+        background-color: $color1
+        box-shadow: $shadow-light
+        @include navbar__logo($width: 162px)
+        &--go-back
+            @extend %go-back

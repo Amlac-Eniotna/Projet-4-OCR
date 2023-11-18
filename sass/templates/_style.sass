@@ -1,5 +1,3 @@
-@import var
-    
 *
     margin: 0
     object-fit: cover
@@ -16,23 +14,13 @@ body
     background-color: $color1
 
 .header
-    &__navbar
-        position: relative
-        z-index: 1
-        @include flex($direction: row, $justify: center, $align: center)
-        height: 63px
-        background-color: $color1
-        box-shadow: $shadow-light
-        &--img
-            width: 162px
+    @include navbar($direction: row, $justify: center, $align: center)
+            
 
 .footer
-    @include color($color: white, $background-color: $color-footer)
-    @include font($size: 16px, $weight: 400)
-    @include flex($direction: column, $gap: 16px)
-    padding: 22px 25px
+    @include footer($color: $color1, $background-color: $color4, $size: 16px, $weight: 400, $direction: column, $gap: 16px)
     &__title
-        @include font($size: 18px, $weight: 400, $family: 'Shrikhand')
+        @include footer__title($size: 18px, $weight: 400, $family: 'Shrikhand')
     &__menu
         @include flex($direction: column, $gap: 7px)
         &--link-icon
@@ -46,6 +34,7 @@ body
         @include position($position: absolute, $z: 6)
         @include size($width: 100%, $height: 100%)
         opacity: 0
+        cursor: pointer
     &--svg
         &-false
             position: absolute

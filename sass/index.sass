@@ -1,174 +1,18 @@
-@import var
-@import style
+@import global/variables
+@import global/mixins
+@import global/btn
 
-.header
-    &__location_bar
-        height: 50px
-        @include color($color: #353535, $background-color: $color-location)
-        @include flex($direction: row, $justify: center, $align: center, $gap: 17px)
-        @include font($size: 16px, $weight: 500)
+@import loader/organisme
 
-.reservation
-    background-color: $color2
-    text-align: center
-    padding: 39px 34px 72px
-    &__title_section
-        @include font(24px, 700)
-        margin-bottom: 18px
-    &__paragraphe
-        @include font($size: 18px, $weight: 300)
-        margin-bottom: 27px
-    &__button
-        @include btn(218px)
-    &__button:hover
-        @extend %btn-hover
+@import header/index/navbar/atomes
+@import header/index/navbar/organismes
+@import header/index/location-bar/organisme
 
-.feature
-    padding: 48px 20px 68px 32px
-    &__center
-        margin: auto
-        max-width: 323.51px
-    &__grid
-        @include flex($direction: column, $gap: 24.92px)
-    &__title
-        @include font(24px, 700)
-        margin-bottom: 25px
-    &__card
-        background-color: $color2
-        @include flex($direction: row, $align: center, $gap: 27px)
-        height: 72.379px
-        position: relative
-        border-radius: 20px
-        padding-left: 34px
-        box-shadow: $shadow
-        &--number
-            @include font($size: 14.182px, $weight: 500)
-            @include color($color: white, $background-color: $color3)
-            @include flex($justify: center, $align: center)
-            @include position($position: absolute, $l: -12px)
-            @include size($width: 24px, $height: 24px)
-            border-radius: 50%
-        &--emote
-            color: #7E7E7E
-            @include font($size: 20px, $weight: 900, $family: "Font Awesome 6 Free")
-        .fa-store
-            color: $color3
-        &--title
-            @include font($size: 16px, $weight: 500)
+@import main/index/reservation/organisme
+@import main/index/feature/organisme
+@import main/index/restaurant/organisation
 
-.restaurant
-    background-color: $color2
-    padding: 54px 17px 66px
-    &__title
-        @include font(24px, 700)
-        margin-bottom: 28px
-    &__center
-        margin: auto
-        max-width: 490px
-        &--grid
-            @include flex($direction: column, $gap: 18px)
-    &__card
-        @include flex($direction: column)
-        background-color: $color1
-        border-radius: 15px
-        width: 100%
-        &--new
-            @include font($size: 14px, $weight: 500)
-            @include color($color: $color6, $background-color: $color5)
-            text-align: center
-            padding: 7px
-            border-radius: 2px
-            margin: 12px
-            box-shadow: $shadow-light
-            position: absolute 
-            width: 80px
-            align-self: flex-end
-        &--img
-            @include size($width: 100%, $height: 231px)
-            border-radius: 15px 15px 0 0
-            &_menu_1
-                object-position: bottom
-            &_menu_2
-                object-position: 50% 60%
-            &_menu_3
-                object-position: bottom
-            &_menu_4
-                object-position: bottom
-        &--bottom
-            @include flex($direction: row, $align: center)
-            padding-right: 25px
-            &__link
-                width: 100%
-        &--text
-            @include flex($direction: column, $gap: 5px)
-            padding: 16px 0 16px 13px
-        &--title
-            @include font($size: 18px, $weight: 700)
-        &--location
-            @include font($size: 17px, $weight: 300)
+@import footer/atomes
+@import footer/organismes
 
-.loader
-    @include position($position: fixed, $z: 10)
-    @include size($width: 100%, $height: 100%)
-    @include flex($justify: center, $align: center)
-    background-color: $color1
-    animation: background_loading 2.2s forwards
-    &__img
-        @include position($position: absolute, $top: 50%)
-        animation: loading 2s forwards
-
-@keyframes loading
-    0%
-        opacity: 0
-    25%
-        opacity: 0.60
-    50%
-        opacity: 0.30
-    75%
-        opacity: 0.60
-        top: 50%
-    100%
-        opacity: 1
-        top: 10%
-
-@keyframes background_loading
-    80%
-        opacity: 1
-    99%
-        opacity: 0
-        z-index: 10
-    100%
-        z-index: -1
-        opacity: 0
-        
-@media (min-width: 765px)
-    .reservation
-        padding: 30px 30px 45px
-        &__title_section
-            @include font($size: 40px, $weight: 700)
-    
-    .feature
-        padding: 50px
-        &__grid
-            @include flex($direction: row, $gap: 36.51px)
-            padding: 0 12px 
-        &__center
-            max-width: 1080px
-        &__card
-            width: 100%
-
-    .restaurant
-        padding: 30px 50px
-        &__center
-            max-width: 1080px
-            &--grid
-                display: grid
-                grid-template-columns: repeat(2, 1fr)
-                gap: 30px
-                transition: gap 1s
-
-@media (min-width: 1435px)
-    .restaurant
-        &__center
-            &--grid
-                gap: 50px 100px
+@import templates/style

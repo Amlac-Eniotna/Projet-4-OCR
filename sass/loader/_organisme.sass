@@ -1,0 +1,39 @@
+.loader
+    @include position($position: fixed, $z: 10)
+    @include size($width: 100%, $height: 100%)
+    @include flex($justify: center, $align: center)
+    background-color: $color1
+    animation: background_loading 2.2s forwards
+    &__img
+        @include position($position: absolute, $top: 50%)
+        width: 162px
+        animation: loading 2s forwards
+
+@keyframes loading
+    0%
+        opacity: 0
+    25%
+        opacity: 0.60
+    50%
+        opacity: 0.30
+    75%
+        opacity: 0.60
+        top: 50%
+    100%
+        opacity: 1
+        top: 10%
+
+@keyframes background_loading
+    80%
+        opacity: 1
+    99%
+        opacity: 0
+        z-index: 10
+    100%
+        z-index: -1
+        opacity: 0
+
+@media (min-width: 1020px)
+    .loader
+        &__img
+            width: 200px

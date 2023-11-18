@@ -1,0 +1,20 @@
+.reservation
+    background-color: $color2
+    text-align: center
+    padding: 39px 34px 72px
+    &__title_section
+        @include font(24px, 700)
+        margin-bottom: 18px
+    &__paragraphe
+        @include font($size: 18px, $weight: 300)
+        margin-bottom: 27px
+    &__button
+        @include btn(218px)
+    &__button:hover
+        @extend %btn-hover
+
+@media (min-width: 765px)
+    .reservation
+        padding: 30px 30px 45px
+        &__title_section
+            @include font($size: 40px, $weight: 700)

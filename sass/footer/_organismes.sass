@@ -1,0 +1,5 @@
+@mixin footer($color, $background-color, $size, $weight, $direction, $gap)
+    @include color($color: $color, $background-color: $background-color)
+    @include font($size: $size, $weight: $weight)
+    @include flex($direction: $direction, $gap: $gap)
+    padding: 22px 25px
