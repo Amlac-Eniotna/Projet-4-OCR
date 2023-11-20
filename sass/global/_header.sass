@@ -1,0 +1,12 @@
+.header
+    &__navbar
+        @include flex($direction: row, $justify: center, $align: center)
+        @include position($position: relative, $z: 1)
+        height: 63px
+        background-color: $color1
+        box-shadow: $shadow-light
+        &--img
+            position: absolute
+            width: 162px
+        &--go-back
+            @extend %go-back !optional

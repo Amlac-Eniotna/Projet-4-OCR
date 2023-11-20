@@ -1,0 +1,32 @@
+.feature
+    padding: 48px 20px 68px 32px
+    &__center
+        margin: auto
+        max-width: 323.51px
+    &__grid
+        @include flex($direction: column, $gap: 24.92px)
+    &__title
+        @include font($size: 24px, $weight: 700)
+        margin-bottom: 25px
+    &__card
+        @include flex($direction: row, $align: center, $gap: 27px)
+        background-color: $color2
+        box-shadow: $shadow
+        height: 72.379px
+        position: relative
+        border-radius: 20px
+        padding: 0 10px 0 34px
+        &--number
+            @include font($size: 14.182px, $weight: 500)
+            @include color($color: $color1, $background-color: $color6)
+            @include flex($justify: center, $align: center)
+            @include position($position: absolute, $l: -12px)
+            @include size($width: 24px, $height: 24px)
+            border-radius: 50%
+        &--emote
+            color: #7E7E7E
+            @include font($size: 20px, $weight: 900, $family: "Font Awesome 6 Free")
+        .fa-store
+            color: $color6
+        &--title
+            @include font($size: 16px, $weight: 500)

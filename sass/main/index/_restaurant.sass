@@ -49,20 +49,3 @@
             @include font($size: 18px, $weight: 700)
         &--location
             @include font($size: 17px, $weight: 300)
-
-@media (min-width: 765px)
-    .restaurant
-        padding: 30px 50px
-        &__center
-            max-width: 1080px
-            &--grid
-                display: grid
-                grid-template-columns: repeat(2, 1fr)
-                gap: 30px
-                transition: gap 1s
-    
-@media (min-width: 1435px)
-    .restaurant
-        &__center
-            &--grid
-                gap: 50px 100px

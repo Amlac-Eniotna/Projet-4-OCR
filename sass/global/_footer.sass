@@ -1,0 +1,12 @@
+.footer
+    @include color($color: $color1, $background-color: $color4)
+    @include font($size: 16px, $weight: 400)
+    @include flex($direction: column, $gap: 16px)
+    padding: 22px 25px
+    &__title
+        @include font($size: 18px, $weight: 400, $family: 'Shrikhand')
+    &__menu
+        @include flex($direction: column, $gap: 7px)
+        &--link-icon
+            @include flex($direction: row, $gap: 11px)
+            @include font($weight: 500)

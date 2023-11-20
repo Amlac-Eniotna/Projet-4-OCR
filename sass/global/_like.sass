@@ -1,0 +1,23 @@
+%svg
+    position: absolute
+    transition: opacity 0.2s
+
+.restaurant__like
+    @include size($width: 22px, $height: 21px)
+    position: relative
+    &--input
+        @include position($position: absolute, $z: 6)
+        @include size($width: 100%, $height: 100%)
+        opacity: 0
+        cursor: pointer
+    &--svg
+        &-false
+            opacity: 1
+            @extend %svg
+        &-true
+            opacity: 0
+            @extend %svg
+    &--input:checked ~ &--svg-false
+        opacity: 0
+    &--input:checked ~ &--svg-true
+        opacity: 1

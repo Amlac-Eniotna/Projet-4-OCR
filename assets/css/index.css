@@ -5,6 +5,62 @@
   background-color: rgba(255, 255, 255, 0.25);
 }
 
+* {
+  margin: 0;
+  object-fit: cover;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+i {
+  text-align: center;
+  width: 18px;
+}
+
+body {
+  background-color: #FFFFFF;
+}
+
+.restaurant__like--svg-true, .restaurant__like--svg-false {
+  position: absolute;
+  transition: opacity 0.2s;
+}
+
+.restaurant__like {
+  width: 22px;
+  height: 21px;
+  max-width: none;
+  position: relative;
+}
+.restaurant__like--input {
+  position: absolute;
+  z-index: 6;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  opacity: 0;
+  cursor: pointer;
+}
+.restaurant__like--svg-false {
+  opacity: 1;
+}
+.restaurant__like--svg-true {
+  opacity: 0;
+}
+.restaurant__like--input:checked ~ .restaurant__like--svg-false {
+  opacity: 0;
+}
+.restaurant__like--input:checked ~ .restaurant__like--svg-true {
+  opacity: 1;
+}
+
 .loader {
   position: fixed;
   z-index: 10;
@@ -66,10 +122,25 @@
     opacity: 0;
   }
 }
-@media (min-width: 1020px) {
-  .loader__img {
-    width: 200px;
-  }
+.header__navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: normal;
+  position: relative;
+  z-index: 1;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  height: 63px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.header__navbar--img {
+  position: absolute;
+  width: 162px;
 }
 .header__location_bar {
   height: 50px;
@@ -128,16 +199,6 @@
   transition: background-color 0.2s;
   background-color: rgba(255, 255, 255, 0);
 }
-@media (min-width: 765px) {
-  .reservation {
-    padding: 30px 30px 45px;
-  }
-  .reservation__title_section {
-    font-size: 40px;
-    font-weight: 700;
-    font-family: "roboto";
-  }
-}
 .feature {
   padding: 48px 20px 68px 32px;
 }
@@ -169,7 +230,7 @@
   height: 72.379px;
   position: relative;
   border-radius: 20px;
-  padding-left: 34px;
+  padding: 0 10px 0 34px;
 }
 .feature__card--number {
   font-size: 14.182px;
@@ -199,10 +260,7 @@
   font-weight: 900;
   font-family: "Font Awesome 6 Free";
 }
-.feature__card--emote .fa-store {
-  color: #9356DC;
-}
-.feature__card--emote .fa-store {
+.feature__card .fa-store {
   color: #9356DC;
 }
 .feature__card--title {
@@ -211,25 +269,6 @@
   font-family: "roboto";
 }
 
-@media (min-width: 765px) {
-  .feature {
-    padding: 50px;
-  }
-  .feature__grid {
-    display: flex;
-    flex-direction: row;
-    justify-content: normal;
-    align-items: normal;
-    gap: 36.51px;
-    padding: 0 12px;
-  }
-  .feature__center {
-    max-width: 1080px;
-  }
-  .feature__card {
-    width: 100%;
-  }
-}
 .restaurant {
   background-color: #F6F6F6;
   padding: 54px 17px 66px;
@@ -325,64 +364,6 @@
   font-family: "roboto";
 }
 
-@media (min-width: 765px) {
-  .restaurant {
-    padding: 30px 50px;
-  }
-  .restaurant__center {
-    max-width: 1080px;
-  }
-  .restaurant__center--grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    transition: gap 1s;
-  }
-}
-@media (min-width: 1435px) {
-  .restaurant__center--grid {
-    gap: 50px 100px;
-  }
-}
-* {
-  margin: 0;
-  object-fit: cover;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-i {
-  text-align: center;
-  width: 18px;
-}
-
-body {
-  background-color: #FFFFFF;
-}
-
-.header__navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: normal;
-  position: relative;
-  z-index: 1;
-  top: auto;
-  bottom: auto;
-  left: auto;
-  right: auto;
-  height: 63px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
-}
-.header__navbar--img {
-  width: 162px;
-}
-
 .footer {
   color: #FFFFFF;
   background-color: #353535;
@@ -419,48 +400,48 @@ body {
   font-family: "roboto";
 }
 
-.restaurant__like {
-  width: 22px;
-  height: 21px;
-  max-width: none;
-  position: relative;
+@media (min-width: 765px) {
+  .reservation {
+    padding: 30px 30px 45px;
+  }
+  .reservation__title_section {
+    font-size: 40px;
+    font-weight: 700;
+    font-family: "roboto";
+  }
+  .feature {
+    padding: 50px;
+  }
+  .feature__grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    align-items: normal;
+    gap: 36.51px;
+    padding: 0 12px;
+  }
+  .feature__center {
+    max-width: 1080px;
+  }
+  .feature__card {
+    width: 100%;
+  }
+  .restaurant {
+    padding: 30px 50px;
+  }
+  .restaurant__center {
+    max-width: 1080px;
+  }
+  .restaurant__center--grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    transition: gap 1s;
+  }
 }
-.restaurant__like--input {
-  position: absolute;
-  z-index: 6;
-  top: auto;
-  bottom: auto;
-  left: auto;
-  right: auto;
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  opacity: 0;
-  cursor: pointer;
-}
-.restaurant__like--svg-false {
-  position: absolute;
-  opacity: 1;
-  transition: opacity 0.2s;
-}
-.restaurant__like--svg-true {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.restaurant__like--input:checked ~ .restaurant__like--svg-false {
-  opacity: 0;
-}
-.restaurant__like--input:checked ~ .restaurant__like--svg-true {
-  opacity: 1;
-}
-
 @media (min-width: 1020px) {
   .loader__img {
     width: 200px;
-  }
-  i {
-    width: auto;
   }
   .header__navbar {
     height: 96px;
@@ -468,6 +449,9 @@ body {
   }
   .header__navbar--img {
     width: 200px;
+  }
+  i {
+    width: auto;
   }
   .footer {
     height: 114px;
@@ -489,6 +473,11 @@ body {
   }
   .footer__menu--link-icon {
     width: 190px;
+  }
+}
+@media (min-width: 1435px) {
+  .restaurant__center--grid {
+    gap: 50px 100px;
   }
 }
 
