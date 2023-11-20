@@ -1,0 +1,19 @@
+@mixin feature__grid($direction, $gap)
+    @include flex($direction: $direction, $gap: $gap)
+
+@mixin feature__card($direction, $align, $gap, $bg-color, $shadows)
+    @include flex($direction: $direction, $align: $align, $gap: $gap)
+    background-color: $bg-color
+    box-shadow: $shadows
+    height: 72.379px
+    position: relative
+    border-radius: 20px
+    padding-left: 34px
+    &--number
+        @include card--number($size: 14.182px, $weight: 500, $color: $color1, $background-color: $color6, $justify: center, $align: center, $position: absolute, $l: -12px, $width: 24px, $height: 24px)
+    &--emote
+        @include card--emote($size: 20px, $weight: 900, $family: "Font Awesome 6 Free")
+        .fa-store
+            color: $color6
+    &--title
+        @include font($size: 16px, $weight: 500)

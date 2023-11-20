@@ -1,0 +1,21 @@
+article
+    position: absolute
+    left: 100vw
+
+.menu
+    &__card
+        @for $i from 1 through 10
+            &.n#{$i}
+                animation: apparition $animation-duration forwards $animation-delay
+            $animation-delay: $animation-delay + $animation-delayAdd
+             
+
+@keyframes apparition
+    0%
+        left: 50%
+        opacity: 0
+    30%
+        opacity: 0
+    100%
+        left: 0
+        opacity: 1

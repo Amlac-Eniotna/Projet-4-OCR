@@ -1,0 +1,22 @@
+.feature
+    padding: 48px 20px 68px 32px
+    &__center
+        margin: auto
+        max-width: 323.51px
+    &__grid
+        @include feature__grid($direction: column, $gap: 24.92px)
+    &__title
+        @include feature__title($size: 24px, $weight: 700)
+    &__card
+        @include feature__card($direction: row, $align: center, $gap: 27px, $bg-color: $color2, $shadows: $shadow)
+
+@media (min-width: 765px)
+    .feature
+        padding: 50px
+        &__grid
+            @include flex($direction: row, $gap: 36.51px)
+            padding: 0 12px 
+        &__center
+            max-width: 1080px
+        &__card
+            width: 100%
