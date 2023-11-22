@@ -1,10 +1,3 @@
-.menu__button:hover {
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
-}
-.menu__button:hover .overlay-btn {
-  background-color: rgba(255, 255, 255, 0.25);
-}
-
 * {
   margin: 0;
   object-fit: cover;
@@ -22,6 +15,13 @@ i {
 
 body {
   background-color: #FFFFFF;
+}
+
+.menu__button:hover {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.35);
+}
+.menu__button:hover .overlay-btn {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .restaurant__like--svg-true, .restaurant__like--svg-false {
